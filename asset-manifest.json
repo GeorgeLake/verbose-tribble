@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/static/js/main.97b2eabd.chunk.js",
-    "main.js.map": "/static/js/main.97b2eabd.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.b73076f1.js",
-    "runtime-main.js.map": "/static/js/runtime-main.b73076f1.js.map",
-    "static/js/2.4a70e82c.chunk.js": "/static/js/2.4a70e82c.chunk.js",
-    "static/js/2.4a70e82c.chunk.js.map": "/static/js/2.4a70e82c.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.6dea0f05.chunk.css.map": "/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.4a70e82c.chunk.js.LICENSE.txt": "/static/js/2.4a70e82c.chunk.js.LICENSE.txt"
+    "main.css": "/verbose-tribble/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/verbose-tribble/static/js/main.33870777.chunk.js",
+    "main.js.map": "/verbose-tribble/static/js/main.33870777.chunk.js.map",
+    "runtime-main.js": "/verbose-tribble/static/js/runtime-main.dc8dbc8b.js",
+    "runtime-main.js.map": "/verbose-tribble/static/js/runtime-main.dc8dbc8b.js.map",
+    "static/js/2.731429ec.chunk.js": "/verbose-tribble/static/js/2.731429ec.chunk.js",
+    "static/js/2.731429ec.chunk.js.map": "/verbose-tribble/static/js/2.731429ec.chunk.js.map",
+    "index.html": "/verbose-tribble/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/verbose-tribble/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.731429ec.chunk.js.LICENSE.txt": "/verbose-tribble/static/js/2.731429ec.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.b73076f1.js",
-    "static/js/2.4a70e82c.chunk.js",
+    "static/js/runtime-main.dc8dbc8b.js",
+    "static/js/2.731429ec.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.97b2eabd.chunk.js"
+    "static/js/main.33870777.chunk.js"
   ]
 }
