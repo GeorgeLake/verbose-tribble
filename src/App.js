@@ -23,6 +23,7 @@ const Block = styled.div`
   padding: 0.25em 1em;
   margin-bottom: 3vh;
   margin-top: 1vh;
+  word-wrap: break-word;
   transition: 0.5s all ease-out;
   &:hover {
     background-color: darkgray;
@@ -132,12 +133,78 @@ const Intro = () => (
   </Block>
 )
 
+const SetUp = () => (
+  <Block>
+    <h1>Setup: Solidity and Smart Contracts</h1>
+    <p>A Simple Solidity Program with setter, getter, and uint</p>
+    <pre><code class="language-jsx">
+      {`// SPDX-License-Identifier: GPL-3.0`}<br/>
+      {`pragma solidity >=0.4.16 <0.9.0; // compiler version`}<br/>
+      {``}<br/>
+      {`contract SimpleStorage {`}<br/>
+      {`    uint storedData; // unsigned int 256 bits`}<br/>
+      {``}<br/>
+      {`    function set(uint x) public {`}<br/>
+      {`        storedData = x;`}<br/>
+      {`    }`}<br/>
+      {``}<br/>
+      {`    function get() public view returns (uint) {`}<br/>
+      {`        return storedData;`}<br/>
+      {`    }`}<br/>
+      {`}`}<br/>
+    </code></pre>
+    <p>Data Storage on EVM (Eth Virtual Machine)</p>
+    <ul>
+        <li>storage; which is persistent between function calls and transactions. Costly to read, and even more to initialise and modify storage.</li>
+        <li>memory; of which a contract obtains a freshly cleared instance for each message call. More costly the larger it grows (it scales quadratically).</li>
+        <li>stack; EVM is not a register machine but a stack machine. It has a maximum size of 1024 elements and contains words of 256 bits.</li>
+    </ul>
+    <p>Useful:</p>
+    <ul>
+        <li><a href="https://remix.ethereum.org/"></a><a href="https://remix.ethereum.org/">https://remix.ethereum.org/</a>&nbsp; &nbsp;(quickly write solidity online)</li>
+        <li><a href="https://ethereum.org/en/developers/docs/"></a><a href="https://ethereum.org/en/developers/docs/">https://ethereum.org/en/developers/docs/</a>&nbsp; &nbsp; (open source eth documentation)</li>
+        <li><a href="https://docs.soliditylang.org/en/v0.8.1/solidity-by-example.html"></a><a href="https://docs.soliditylang.org/en/v0.8.1/solidity-by-example.html">https://docs.soliditylang.org/en/v0.8.1/solidity-by-example.html</a>&nbsp; &nbsp; (example solidity code)</li>
+        <li><a href="https://docs.soliditylang.org/en/v0.8.1/index.html"></a><a href="https://docs.soliditylang.org/en/v0.8.1/index.html">https://docs.soliditylang.org/en/v0.8.1/index.html</a>&nbsp; &nbsp; (solidity documentation)</li>
+        <li>commands:<ul>
+                <li>docker run ethereum/solc:stable --help &nbsp; (create docker image, latest version for specific versions replace &quot;stable&quot; with version number)</li>
+                <li>docker run -v /var/folders:/sources ethereum/solc:stable -o /sources/output --abi --bin /sources/Contract.sol &nbsp; &nbsp;(Docker image to compile Solidity files)</li>
+            </ul>
+        </li>
+    </ul>
+    <p>Musings</p>
+    <ul>
+        <li>resource given was for linux and found some errors, to install solidity use: <a href="https://docs.soliditylang.org/en/latest/installing-solidity.html#building-from-source"></a><a href="https://docs.soliditylang.org/en/latest/installing-solidity.html#building-from-source">https://docs.soliditylang.org/en/latest/installing-solidity.html#building-from-source</a></li>
+    </ul>
+  </Block>
+)
+
+
+const Deploying = () => (
+  <Block>
+    <h1>Deploying Smart Contracts</h1>
+    <p>Thankfully I already had a metamask setup and just needed to connect to the Kovan network, unfortunately the icarus(SMS verification) faucet website was down so I send a request to the gitter faucet instead. While I wait to get Kovan I will use the Ropsten network instead.</p>
+    <p>Reading data on the blockchain does not need any transactions (writing) or fees. Because only modifying the state of the blockchain requires to make a transaction</p>
+    <p>to deploy to network, change environment to injected web3 from JavaScript VM</p>
+    <ul>
+        <li>First ever deployed contract: <a href="https://ropsten.etherscan.io/tx/0x232aaec34d3ba372226231e53abb3cba9f01082aa3d761d950b73e04b4a813b5"></a><a href="https://ropsten.etherscan.io/tx/0x232aaec34d3ba372226231e53abb3cba9f01082aa3d761d950b73e04b4a813b5">https://ropsten.etherscan.io/tx/0x232aaec34d3ba372226231e53abb3cba9f01082aa3d761d950b73e04b4a813b5</a></li>
+        <li>Me modifying the contract: <a href="https://ropsten.etherscan.io/tx/0x96f76390478cf13316aa9b55c10bdfd12daaf1f863f790520f17ca97a0c129d9"></a><a href="https://ropsten.etherscan.io/tx/0x96f76390478cf13316aa9b55c10bdfd12daaf1f863f790520f17ca97a0c129d9">https://ropsten.etherscan.io/tx/0x96f76390478cf13316aa9b55c10bdfd12daaf1f863f790520f17ca97a0c129d9</a></li>
+    </ul>
+    <p>After looking at all the examples I want to write a smart contract that we can gamble our fake eth</p>
+    <p>Useful:</p>
+    <ul>
+        <li><a href="https://kovan-testnet.github.io/website/"></a><a href="https://kovan-testnet.github.io/website/">https://kovan-testnet.github.io/website/</a> (testnet, many useful links including faucets)</li>
+        <li><a href="https://ropsten.etherscan.io/"></a><a href="https://ropsten.etherscan.io/">https://ropsten.etherscan.io/</a>&nbsp; &nbsp; (etherscan in general will be super useful)</li>
+    </ul>
+  </Block>
+)
 
 function App() {
   return (
       <Wrap>
-      <Primary>  
-        <Intro/>        
+      <Primary>
+        <Deploying/>
+        <SetUp/> 
+        <Intro/>
         <Init/>
       </Primary>
       </Wrap>      
