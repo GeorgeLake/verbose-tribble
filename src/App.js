@@ -137,22 +137,18 @@ const SetUp = () => (
   <Block>
     <h1>Setup: Solidity and Smart Contracts</h1>
     <p>A Simple Solidity Program with setter, getter, and uint</p>
-    <pre><code class="language-jsx">
+    <ol><pre><code class="language-jsx">
       {`// SPDX-License-Identifier: GPL-3.0`}<br/>
-      {`pragma solidity >=0.4.16 <0.9.0; // compiler version`}<br/>
-      {``}<br/>
+      {`pragma solidity >=0.4.16 <0.9.0; // compiler version`}<br/><br/>
       {`contract SimpleStorage {`}<br/>
-      {`    uint storedData; // unsigned int 256 bits`}<br/>
-      {``}<br/>
+      {`    uint storedData; // unsigned int 256 bits`}<br/><br/>
       {`    function set(uint x) public {`}<br/>
       {`        storedData = x;`}<br/>
-      {`    }`}<br/>
-      {``}<br/>
+      {`    }`}<br/><br/>
       {`    function get() public view returns (uint) {`}<br/>
-      {`        return storedData;`}<br/>
-      {`    }`}<br/>
+      {`        return storedData;`}<br/><br/>
       {`}`}<br/>
-    </code></pre>
+    </code></pre></ol>
     <p>Data Storage on EVM (Eth Virtual Machine)</p>
     <ul>
         <li>storage; which is persistent between function calls and transactions. Costly to read, and even more to initialise and modify storage.</li>
@@ -198,10 +194,33 @@ const Deploying = () => (
   </Block>
 )
 
+const Casino = () => (
+  <Block>
+    <h1>CoinFlip Smart Contract with House Edge</h1>
+    <p>Requirements:</p>
+    <ol>
+        <li>Only the address that deploys contract can withdraw money</li>
+        <li>Be able to pseudorandomly generate a random number</li>
+        <li>Send money to contract and have a chance to receive double (49%) or lose it all</li>
+    </ol>
+    <p>Making this contract I learnt about:</p>
+    <ul>
+        <li>how contracts can have balances and how to interact with sender and owner addresses</li>
+        <li>getting and setting values</li>
+        <li>solidity syntax (if, require, constructor, functions...)</li>
+    </ul>
+    <p>I have deployed my casino with 5eth on the Ropsten network here:</p>
+    <p><a href="https://ropsten.etherscan.io/address/0x90313e55139affc3500279458427ca95cbed9edb"></a><a href="https://ropsten.etherscan.io/address/0x90313e55139affc3500279458427ca95cbed9edb">https://ropsten.etherscan.io/address/0x90313e55139affc3500279458427ca95cbed9edb</a></p>
+    <p>See if you can beat the casino and drain the contract! (I&apos;ll add it to Kovan when I get some keth)</p>
+    <img src="../assets/casino.jpg"></img>
+  </Block>
+)
+
 function App() {
   return (
       <Wrap>
       <Primary>
+        <Casino/>
         <Deploying/>
         <SetUp/> 
         <Intro/>
