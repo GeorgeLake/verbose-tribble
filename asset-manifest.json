@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/verbose-tribble/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/verbose-tribble/static/js/main.1f8270e9.chunk.js",
-    "main.js.map": "/verbose-tribble/static/js/main.1f8270e9.chunk.js.map",
+    "main.js": "/verbose-tribble/static/js/main.d267c463.chunk.js",
+    "main.js.map": "/verbose-tribble/static/js/main.d267c463.chunk.js.map",
     "runtime-main.js": "/verbose-tribble/static/js/runtime-main.dc8dbc8b.js",
     "runtime-main.js.map": "/verbose-tribble/static/js/runtime-main.dc8dbc8b.js.map",
     "static/js/2.731429ec.chunk.js": "/verbose-tribble/static/js/2.731429ec.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.dc8dbc8b.js",
     "static/js/2.731429ec.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.1f8270e9.chunk.js"
+    "static/js/main.d267c463.chunk.js"
   ]
 }
