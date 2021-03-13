@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import assetCurve from './assets/AMMCurve.png';
+import assetCasino from './assets/casino.jpg';
+
+
 const Wrap=styled.div`
     max-width: 1200px;
     margin: 0 auto;
@@ -212,9 +216,11 @@ const Casino = () => (
     <p>I have deployed my casino with 5eth on the Ropsten network here:</p>
     <p><a href="https://ropsten.etherscan.io/address/0x90313e55139affc3500279458427ca95cbed9edb"></a><a href="https://ropsten.etherscan.io/address/0x90313e55139affc3500279458427ca95cbed9edb">https://ropsten.etherscan.io/address/0x90313e55139affc3500279458427ca95cbed9edb</a></p>
     <p>See if you can beat the casino and drain the contract! (I&apos;ll add it to Kovan when I get some keth)</p>
-    <img src="../assets/casino.jpg"></img>
+    <img style={{flex:1 , width: '100%', height: '100%'}} src={assetCasino}></img>
   </Block>
 )
+
+
 
 const PrepEnv = () => (
   <Block>
@@ -224,7 +230,7 @@ const PrepEnv = () => (
     <ul>
         <li>truffle init (starts empty truffle project)</li>
         <li>truffle compile (compile smart contracts)</li>
-        <li>to edit the config uncomment the defaults 🤦&zwj;♂️</li>
+        <li>remember: to edit the config uncomment the defaults 🤦&zwj;♂️</li>
         <li>truffle console (interact with smart contract within terminal)</li>
         <li>truffle migrate (compile and deploy to network (ganache default))</li>
         <li>truffle exec scripts/nameOfMyScript.js (write scripts in scripts folder to execute)</li>
@@ -240,10 +246,75 @@ const PrepEnv = () => (
     </ul>
   </Block>
 )
+
+const AMM = () => (
+  <Block>
+    <h1>Automatic Market Makers XY=k</h1>
+    <p>Concept behind popular DeFI application Uniswap</p>
+    <p><a href="https://www.gemini.com/cryptopedia/amm-what-are-automated-market-makers"></a><a href="https://www.gemini.com/cryptopedia/amm-what-are-automated-market-makers">https://www.gemini.com/cryptopedia/amm-what-are-automated-market-makers</a></p>
+    <p>What are Automated Market Makers (AMM)?</p>
+    <ul>
+        <li>digital assets traded in permissionless and automatic (DeFi) way by using liquidity pools rather than a traditional market of buyers and sellers</li>
+        <li>no one entity controls, open participation, build onto of another</li>
+        <li>algorithmic market not inefficient human one (slow price updates and linear space)</li>
+    </ul>
+    <p>Liquidity Pools and Liquidity Providers</p>
+    <ul>
+        <li>liquidity is how easy you can convert asset into another asset.</li>
+        <li>liquidity problem: number of buyers and sellers can be small, difficult to find people to trade on regular basis</li>
+        <li>more assets in a pool and the more liquidity the pool has, the easier trading becomes</li>
+        <li>instead of trading between buyers and sellers (traditional), users trade against a pool of tokens &mdash; a liquidity pool (shared pot of tokens)<ul>
+                <li>Traditional: Buyer bids MAX price to buy for, Seller asks for MIN price to sell for. Trade happens when bids &gt; min asks</li>
+            </ul>
+        </li>
+        <li>Supply liquidity t pools with tokens and price of token is determined by mathematical formula, different formulas for different purposes</li>
+        <li>Liquidity providers earn a fee for providing tokens paid by traders who interact with pool, can also earn yield (yield farming)</li>
+    </ul>
+    <p>Constant Product Formula</p>
+    <ul>
+        <li>Mathematical formula for AMM can take multiple forms, one proposed by Vitalik is: tokenA_balance(p) * tokenB_balance(p) = k &nbsp; &nbsp;also written as: x * y = k (curve of uniswap)</li>
+        <li>k is constant so there is a constant balance of assets that determines the price of tokens in a liquidity pool<ul>
+                <li>simple microeconomics: high demand = less supply = higher price of asset (inverse is true)</li>
+            </ul>
+        </li>
+        <li>there will eventually be a return to a state of balance that reflects a relatively accurate market price (no matter volatility)</li>
+        <li>arbitrage opportunities will ensure market price across exchanges is also accurate</li>
+    </ul>
+    <p>Variations in AMM</p>
+    <ul>
+        <li>Uniswap (Standard): Pair ERC-20 tokens with 50/50 ratio</li>
+        <li>Curve (Specialised): liquidity pools of similar assets (e.g. stablecoins), as a result offers low rates and efficient trades</li>
+        <li>Balancer (Flexible): Expand on Uniswap allowing users to create dynamic liquidity pools of up to 8 assets in any ratio</li>
+    </ul>
+    <p><a href="https://web.stanford.edu/~guillean/talks/defi-2020.pdf"></a><a href="https://web.stanford.edu/~guillean/talks/defi-2020.pdf">https://web.stanford.edu/~guillean/talks/defi-2020.pdf</a></p>
+    <p>Trading Set</p>
+    <ul>
+        <li>constant price markets (Uniswap) have concave hyperbola of reserves possible (our set)</li>
+        <li>no rational trader would trade to the right of the set, many trade functions reveal same set</li>
+        <li>makes arbitrage easy and therefore prices are more accurate externally</li>
+    </ul>
+    <p><a href="https://uniswap.org/whitepaper.pdf"></a><a href="https://uniswap.org/whitepaper.pdf">https://uniswap.org/whitepaper.pdf</a></p>
+    <p>UniSwap WhitePaper</p>
+    <ul>
+        <li>v1: ETH is bridge currency, every pair includes ETH as an asset, makes routing simpler.</li>
+        <li>All liquidity providers therefore have exposure to ETH and suffer loss based on changes of other assets relative to ETH</li>
+        <li>v1: using ETH as a bridge means that traders have to pay twice gas fees as they would to go from ABC/XYZ pair. (ABC/ETH &rarr; ETH/XYZ) also suffer slippage twice</li>
+        <li>v2: create any pair of ERC-20, routing can be handled at higher layer</li>
+        <li>ETH is different from standard interface for interacting with ERC-20 tokens, as result many other protocols on Ethereum don&apos;t support ETH instead using canonical Wrapped ETH token WETH.<ul>
+                <li>ETH must be wrapped into WETH before it can be traded on v2</li>
+            </ul>
+        </li>
+    </ul>
+    <img src={assetCurve}></img>
+  </Block>
+)
+
+
 function App() {
   return (
       <Wrap>
       <Primary>
+        <AMM/>
         <PrepEnv/>
         <Casino/>
         <Deploying/>
