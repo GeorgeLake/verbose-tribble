@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/verbose-tribble/static/css/main.6d73f29e.chunk.css",
-    "main.js": "/verbose-tribble/static/js/main.da11c95e.chunk.js",
-    "main.js.map": "/verbose-tribble/static/js/main.da11c95e.chunk.js.map",
+    "main.js": "/verbose-tribble/static/js/main.620f4e5a.chunk.js",
+    "main.js.map": "/verbose-tribble/static/js/main.620f4e5a.chunk.js.map",
     "runtime-main.js": "/verbose-tribble/static/js/runtime-main.dc8dbc8b.js",
     "runtime-main.js.map": "/verbose-tribble/static/js/runtime-main.dc8dbc8b.js.map",
     "static/js/2.731429ec.chunk.js": "/verbose-tribble/static/js/2.731429ec.chunk.js",
@@ -11,12 +11,14 @@
     "static/css/main.6d73f29e.chunk.css.map": "/verbose-tribble/static/css/main.6d73f29e.chunk.css.map",
     "static/js/2.731429ec.chunk.js.LICENSE.txt": "/verbose-tribble/static/js/2.731429ec.chunk.js.LICENSE.txt",
     "static/media/AMMCurve.f21c42ee.png": "/verbose-tribble/static/media/AMMCurve.f21c42ee.png",
-    "static/media/casino.ca96f96e.jpg": "/verbose-tribble/static/media/casino.ca96f96e.jpg"
+    "static/media/anatomy.356cde3d.jpg": "/verbose-tribble/static/media/anatomy.356cde3d.jpg",
+    "static/media/casino.ca96f96e.jpg": "/verbose-tribble/static/media/casino.ca96f96e.jpg",
+    "static/media/trade.3a76b395.jpg": "/verbose-tribble/static/media/trade.3a76b395.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.dc8dbc8b.js",
     "static/js/2.731429ec.chunk.js",
     "static/css/main.6d73f29e.chunk.css",
-    "static/js/main.da11c95e.chunk.js"
+    "static/js/main.620f4e5a.chunk.js"
   ]
 }
