@@ -317,6 +317,7 @@ const UniSwap = () => (
     <p>These images were very useful for my understanding (ontop of playing with the interface):</p>
     <img style={{flex:1 , width: '100%', height: '100%'}} src={assetAnatomy}></img>
     <img style={{flex:1 , width: '100%', height: '100%'}} src={assetTrade}></img>
+    <p>View my transactions here: <a href="https://ropsten.etherscan.io/address/0x4062Da349E622963D8A784F5A00e394D6d79c330"></a><a href="https://ropsten.etherscan.io/address/0x4062Da349E622963D8A784F5A00e394D6d79c330">https://ropsten.etherscan.io/address/0x4062Da349E622963D8A784F5A00e394D6d79c330</a></p>
   </Block>
 )
 
