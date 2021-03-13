@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 import assetCurve from './assets/AMMCurve.png';
 import assetCasino from './assets/casino.jpg';
+import assetAnatomy from './assets/anatomy.jpg';
+import assetTrade from './assets/trade.jpg';
 
 
 const Wrap=styled.div`
@@ -309,11 +311,21 @@ const AMM = () => (
   </Block>
 )
 
+const UniSwap = () => (
+  <Block>
+    <h1>UniSwap</h1>
+    <p>These images were very useful for my understanding (ontop of playing with the interface):</p>
+    <img style={{flex:1 , width: '100%', height: '100%'}} src={assetAnatomy}></img>
+    <img style={{flex:1 , width: '100%', height: '100%'}} src={assetTrade}></img>
+  </Block>
+)
+
 
 function App() {
   return (
       <Wrap>
       <Primary>
+        <UniSwap/>
         <AMM/>
         <PrepEnv/>
         <Casino/>
