@@ -216,10 +216,35 @@ const Casino = () => (
   </Block>
 )
 
+const PrepEnv = () => (
+  <Block>
+    <h1>Preparing Developer Environment</h1>
+    <p>Advantages of being in more focussed environment and be able to make unit tests on own machine. Learn <strong>Truffle (manage development process) and Ganache (local simulated eth environment)</strong></p>
+    <p>Truffle:</p>
+    <ul>
+        <li>truffle init (starts empty truffle project)</li>
+        <li>truffle compile (compile smart contracts)</li>
+        <li>to edit the config uncomment the defaults 🤦&zwj;♂️</li>
+        <li>truffle console (interact with smart contract within terminal)</li>
+        <li>truffle migrate (compile and deploy to network (ganache default))</li>
+        <li>truffle exec scripts/nameOfMyScript.js (write scripts in scripts folder to execute)</li>
+        <li>truffle create &lt;artifact_type&gt; &lt;Name&gt;<ul>
+                <li>artifact_type = (contract|migration|test)</li>
+            </ul>
+        </li>
+    </ul>
+    <p>Ganache:</p>
+    <ul>
+        <li>make sure to quickstart the network</li>
+        <li>explore blocks in the local network</li>
+    </ul>
+  </Block>
+)
 function App() {
   return (
       <Wrap>
       <Primary>
+        <PrepEnv/>
         <Casino/>
         <Deploying/>
         <SetUp/> 
